@@ -5,9 +5,9 @@
  *      Author: KiMo
  */
 
-#include "Types.h"
-#include "PWM_Interface.h"
-#include "PWM_Delay.h"
+#include "Utilities\Types.h"
+#include "Utilities\Delay.h"
+#include "MCAL\PWM\PWM_Interface.h"
 
 void main(void) {
 

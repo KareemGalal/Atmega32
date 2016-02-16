@@ -7,7 +7,7 @@
 
 #include "Utilities\Types.h"
 #include "MCAL\DIO\DIO_Interface.h"
-#include "MCAL\DIO\DIO_Delay.h"
+#include "Utilities\Delay.h"
 #include "HAL\SSD\SSD_Interface.h"
 
 #define SWITCHPIN			DIO_u8PIN15

@@ -5,7 +5,7 @@
  *      Author: KiMo
  */
 
-#include "Types.h"
+#include "Utilities\Types.h"
 #include "PWM_Config.h"
 #include "PWM_Interface.h"
 #include "PWM_Private.h"
@@ -18,7 +18,7 @@
 extern void PWM_voidInit(void) {
 	PWM_u8TCCR1A = PWM_u8TCCR1A_VAL;
 	PWM_u8TCCR1B = PWM_u8TCCR1B_VAL;
-	PWM_u16ICR1 = 4999;//PWM_TOPVALUE;
+	PWM_u16ICR1 = PWM_TOPVALUE; //4999;//PWM_TOPVALUE;
 	PWM_u16OCR1A = PWM_u16OCR1B = PWM_INTIAL_DUTY;
 	PWM_u8DDRD |= (DIO_u8OUTPUT << PWM_u8CH2_PD5) | (DIO_u8OUTPUT << PWM_u8CH3_PD4);
 	return;

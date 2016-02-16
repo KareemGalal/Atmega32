@@ -6,8 +6,8 @@
  */
 
 #include "Utilities\Types.h"
+#include "Utilities\Delay.h"
 #include "MCAL\DIO\DIO_Interface.h"
-#include "MCAL\DIO\DIO_Delay.h"
 #include "HAL\SSD\SSD_Interface.h"
 
 int main(void) {

@@ -7,7 +7,7 @@
 
 /*Comment!: Number of Connected Display*/
 /*Range!  : 1:6 */
-#define SSD_u8DISPCNT			2
+#define SSD_u8DISPCNT			2	// No magic numbers
 
 /*******************************************************/
 /********** Configuration for Display Num1 *************/

@@ -11,7 +11,7 @@
 #include "DIO_Interface.h"
 #include "DIO_Private.h"
 
-static u8* const DIO_u8DDRS[NUMBER_OF_PORTS] = { DIO_u8DDRA, DIO_u8DDRB, DIO_u8DDRC, DIO_u8DDRD };
+static u8* DIO_u8DDRS[NUMBER_OF_PORTS] = { DIO_u8DDRA, DIO_u8DDRB, DIO_u8DDRC, DIO_u8DDRD };
 static u8* const DIO_u8PORTS[NUMBER_OF_PORTS] = { DIO_u8PORTA, DIO_u8PORTB, DIO_u8PORTC, DIO_u8PORTD };
 static u8* const DIO_u8PINS[NUMBER_OF_PORTS] = { DIO_u8PINA, DIO_u8PINB, DIO_u8PINC, DIO_u8PIND };
 

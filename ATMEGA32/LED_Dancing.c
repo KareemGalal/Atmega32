@@ -5,11 +5,11 @@
  *      Author: KiMo
  */
 
-#include "Types.h"
-#include "DIO_Interface.h"
-#include "DIO_Delay.h"
+#include "Utilities\Types.h"
+#include "Utilities\Delay.h"
+#include "MCAL\DIO\DIO_Interface.h"
 
-void main(void) {
+int main(void) {
 	u8 Local_u8Index;
 	u8 Local_u8Value;
 	DIO_voidInit();
@@ -100,5 +100,5 @@ void main(void) {
 			voidDELAY_MS(200);
 		}
 	}
-	return;
+	return 0;
 }

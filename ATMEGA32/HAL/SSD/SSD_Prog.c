@@ -19,6 +19,8 @@ static const SevSegPins SSD_Digits_ComCath[10] = { { 1, 1, 1, 1, 1, 1, 0 },  // 
 		{ 1, 1, 1, 1, 0, 1, 1 }   // = 9
 };
 
+// make it empty and initialize it in the init function
+
 /*Comment!: Global Array for ComAnod Type Segments(SEGA:G) Status for a Specific Number*/
 static const SevSegPins SSD_Digits_ComAnod[10] = { { 0, 0, 0, 0, 0, 0, 1 },  // = 0
 		{ 1, 0, 0, 1, 1, 1, 1 },  // = 1
@@ -408,6 +410,7 @@ extern u8 SSD_u8TurnOff(u8 Copy_u8DispIdx) {
 
 /*Comment!: Initialization Function*/
 extern void SSD_voidInit(void) {
+	// Initialize global variables
 	#if (SSD_u8DISP1_INITSTATE==SSD_u8ONSTATE)
 	#if (SSD_u8DISP1_TYPE==SSD_u8COMCATH)
 	      DIO_u8WritePinVal(SSD_u8DISP1_COM, SSD_u8DISP1_TYPE);
