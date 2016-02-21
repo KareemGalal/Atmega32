@@ -2,7 +2,7 @@
  * DIO_interface.h
  *
  *  Created on: Jan 27, 2016
- *      Author: KiMo
+ *      Author: Kareem Galal
  */
 
 #ifndef _DIO_INTERFACE_H_

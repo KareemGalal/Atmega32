@@ -2,7 +2,7 @@
    DIO_private.h
 
     Created on: Jan 27, 2016
-        Author: KiMo
+        Author: Kareem Galal
 */
 
 #ifndef _DIO_PRIVATE_H_

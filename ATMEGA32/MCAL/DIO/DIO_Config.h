@@ -2,7 +2,7 @@
  * DIO_config.h
  *
  *  Created on: Jan 27, 2016
- *      Author: KiMo
+ *      Author: Kareem Galal
  */
 
 #ifndef _DIO_CONFIG_H_

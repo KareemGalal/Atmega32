@@ -2,7 +2,7 @@
  * DIO_prog.c
  *
  *  Created on: Jan 27, 2016
- *      Author: KiMo
+ *      Author: Kareem Galal
  */
 
 #include "..\..\Utilities\Types.h"

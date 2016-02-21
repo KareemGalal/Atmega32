@@ -1,3 +1,11 @@
+/*
+   TSW_Config.h
+
+    Created on: Feb 22, 2016
+        Author: Kareem Galal
+*/
+
+
 #ifndef _TSW_CONFIG_H_
 #define _TSW_CONFIG_H_
 
@@ -46,4 +54,4 @@
 #define TSW_u8SWITCH11PIN	DIO_u8PIN0
 #define TSW_u8SWITCH12PIN	DIO_u8PIN0
 
-#endif 
+#endif	/* _TSW_CONFIG_H_ */
