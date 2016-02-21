@@ -11,7 +11,7 @@
 #include "DIO_Interface.h"
 #include "DIO_Private.h"
 
-static u8* DIO_u8DDRS[NUMBER_OF_PORTS] = { DIO_u8DDRA, DIO_u8DDRB, DIO_u8DDRC, DIO_u8DDRD };
+static u8* const DIO_u8DDRS[NUMBER_OF_PORTS] = { DIO_u8DDRA, DIO_u8DDRB, DIO_u8DDRC, DIO_u8DDRD };
 static u8* const DIO_u8PORTS[NUMBER_OF_PORTS] = { DIO_u8PORTA, DIO_u8PORTB, DIO_u8PORTC, DIO_u8PORTD };
 static u8* const DIO_u8PINS[NUMBER_OF_PORTS] = { DIO_u8PINA, DIO_u8PINB, DIO_u8PINC, DIO_u8PIND };
 
@@ -38,13 +38,13 @@ extern void DIO_voidInit(void) {
 /*Comment!: Read Pin Value */
 extern u8 DIO_u8ReadPinVal(u8 Copy_u8PinIdx, u8* Copy_u8PtrToPinVal) {
 	u8 Local_u8Status;
-	if ((Copy_u8PinIdx <= DIO_u8PIN31)) {
+	if ((Copy_u8PinIdx > DIO_u8PIN31)) {
+		Local_u8Status = u8ERROR;
+	} else {
 		u8 Local_u8PinNum = Copy_u8PinIdx % NUMBER_OF_PINS_PER_PORT;
 		u8 Local_u8PortNum = Copy_u8PinIdx / NUMBER_OF_PINS_PER_PORT;
 		*Copy_u8PtrToPinVal = GET_BIT((*DIO_u8PINS[Local_u8PortNum]), Local_u8PinNum);
 		Local_u8Status = u8OK;
-	} else {
-		Local_u8Status = u8ERROR;
 	}
 	return Local_u8Status;
 }
@@ -52,7 +52,9 @@ extern u8 DIO_u8ReadPinVal(u8 Copy_u8PinIdx, u8* Copy_u8PtrToPinVal) {
 /*Comment!: Write Pin Value */
 extern u8 DIO_u8WritePinVal(u8 Copy_u8PinIdx, u8 Copy_u8PinVal) {
 	u8 Local_u8Status;
-	if ((Copy_u8PinIdx <= DIO_u8PIN31) && ((Copy_u8PinVal == DIO_u8LOW) || (Copy_u8PinVal == DIO_u8HIGH))) {
+	if ((Copy_u8PinIdx > DIO_u8PIN31) || (Copy_u8PinVal > DIO_u8HIGH)) {
+		Local_u8Status = u8ERROR;
+	} else {
 		u8 Local_u8PinNum = Copy_u8PinIdx % NUMBER_OF_PINS_PER_PORT;
 		u8 Local_u8PortNum = Copy_u8PinIdx / NUMBER_OF_PINS_PER_PORT;
 		if (Copy_u8PinVal == DIO_u8LOW) { // ASSIGN BIT
@@ -61,8 +63,6 @@ extern u8 DIO_u8WritePinVal(u8 Copy_u8PinIdx, u8 Copy_u8PinVal) {
 			SET_BIT((*DIO_u8PORTS[Local_u8PortNum]), Local_u8PinNum);
 		}
 		Local_u8Status = u8OK;
-	} else {
-		Local_u8Status = u8ERROR;
 	}
 	return Local_u8Status;
 }
@@ -70,11 +70,11 @@ extern u8 DIO_u8WritePinVal(u8 Copy_u8PinIdx, u8 Copy_u8PinVal) {
 /*Comment!: Read Port Value */
 extern u8 DIO_u8ReadPortVal(u8 Copy_u8PortIdx, u8* Copy_u8PtrToPortVal) {
 	u8 Local_u8Status;
-	if ((Copy_u8PortIdx <= DIO_u8PORT3)) {
+	if ((Copy_u8PortIdx > DIO_u8PORT3)) {
+		Local_u8Status = u8ERROR;
+	} else {
 		*Copy_u8PtrToPortVal = (*DIO_u8PINS[Copy_u8PortIdx]);
 		Local_u8Status = u8OK;
-	} else {
-		Local_u8Status = u8ERROR;
 	}
 	return Local_u8Status;
 }
@@ -83,11 +83,11 @@ extern u8 DIO_u8ReadPortVal(u8 Copy_u8PortIdx, u8* Copy_u8PtrToPortVal) {
 extern u8 DIO_u8WritePortVal(u8 Copy_u8PortIdx, u8 Copy_u8PortVal) {
 	//case if Copy_u8PortVal < 0 OR >255
 	u8 Local_u8Status;
-	if ((Copy_u8PortIdx <= DIO_u8PORT3)) {
+	if ((Copy_u8PortIdx > DIO_u8PORT3)) {
+		Local_u8Status = u8ERROR;
+	} else {
 		(*DIO_u8DDRS[Copy_u8PortIdx]) = Copy_u8PortVal;
 		Local_u8Status = u8OK;
-	} else {
-		Local_u8Status = u8ERROR;
 	}
 	return Local_u8Status;
 }
@@ -95,13 +95,13 @@ extern u8 DIO_u8WritePortVal(u8 Copy_u8PortIdx, u8 Copy_u8PortVal) {
 /*Comment!: Read Pin Direction */
 extern u8 DIO_u8ReadPinDir(u8 Copy_u8PinIdx, u8* Copy_u8PtrToPinDir) {
 	u8 Local_u8Status;
-	if ((Copy_u8PinIdx <= DIO_u8PIN31)) {
+	if ((Copy_u8PinIdx > DIO_u8PIN31)) {
+		Local_u8Status = u8ERROR;
+	} else {
 		u8 Local_u8PinNum = Copy_u8PinIdx % NUMBER_OF_PINS_PER_PORT;
 		u8 Local_u8PortNum = Copy_u8PinIdx / NUMBER_OF_PINS_PER_PORT;
-		*Copy_u8PtrToPinDir = GET_BIT((*DIO_u8DDRS[Local_u8PortNum]), Local_u8PinNum);
+		*Copy_u8PtrToPinDir = GET_BIT((*DIO_u8DDRS[Local_u8PortNum]),Local_u8PinNum);
 		Local_u8Status = u8OK;
-	} else {
-		Local_u8Status = u8ERROR;
 	}
 	return Local_u8Status;
 }
@@ -109,7 +109,9 @@ extern u8 DIO_u8ReadPinDir(u8 Copy_u8PinIdx, u8* Copy_u8PtrToPinDir) {
 /*Comment!: Write Pin Direction */
 extern u8 DIO_u8WritePinDir(u8 Copy_u8PinIdx, u8 Copy_u8PinDir) {
 	u8 Local_u8Status;
-	if ((Copy_u8PinIdx <= DIO_u8PIN31) && ((Copy_u8PinDir == DIO_u8INPUT) || (Copy_u8PinDir == DIO_u8OUTPUT))) {
+	if ((Copy_u8PinIdx > DIO_u8PIN31) || (Copy_u8PinDir > DIO_u8OUTPUT)) {
+		Local_u8Status = u8ERROR;
+	} else {
 		u8 Local_u8PinNum = Copy_u8PinIdx % NUMBER_OF_PINS_PER_PORT;
 		u8 Local_u8PortNum = Copy_u8PinIdx / NUMBER_OF_PINS_PER_PORT;
 		if (Copy_u8PinDir == DIO_u8INPUT) {
@@ -118,8 +120,6 @@ extern u8 DIO_u8WritePinDir(u8 Copy_u8PinIdx, u8 Copy_u8PinDir) {
 			SET_BIT((*DIO_u8DDRS[Local_u8PortNum]), Local_u8PinNum);
 		}
 		Local_u8Status = u8OK;
-	} else {
-		Local_u8Status = u8ERROR;
 	}
 	return Local_u8Status;
 }
@@ -127,11 +127,11 @@ extern u8 DIO_u8WritePinDir(u8 Copy_u8PinIdx, u8 Copy_u8PinDir) {
 /*Comment!: Read Port Direction */
 extern u8 DIO_u8ReadPortDir(u8 Copy_u8PortIdx, u8* Copy_u8PtrToPortDir) {
 	u8 Local_u8Status;
-	if ((Copy_u8PortIdx <= DIO_u8PORT3)) {
+	if ((Copy_u8PortIdx > DIO_u8PORT3)) {
+		Local_u8Status = u8ERROR;
+	} else {
 		*Copy_u8PtrToPortDir = (*DIO_u8DDRS[Copy_u8PortIdx]);
 		Local_u8Status = u8OK;
-	} else {
-		Local_u8Status = u8ERROR;
 	}
 	return Local_u8Status;
 }
@@ -140,11 +140,11 @@ extern u8 DIO_u8ReadPortDir(u8 Copy_u8PortIdx, u8* Copy_u8PtrToPortDir) {
 extern u8 DIO_u8WritePortDir(u8 Copy_u8PortIdx, u8 Copy_u8PortDir) {
 	//case if Copy_u8PortDir < 0 OR >255
 	u8 Local_u8Status;
-	if ((Copy_u8PortIdx <= DIO_u8PORT3)) {
+	if ((Copy_u8PortIdx > DIO_u8PORT3)) {
+		Local_u8Status = u8ERROR;
+	} else {
 		(*DIO_u8DDRS[Copy_u8PortIdx]) = Copy_u8PortDir;
 		Local_u8Status = u8OK;
-	} else {
-		Local_u8Status = u8ERROR;
 	}
 	return Local_u8Status;
 }

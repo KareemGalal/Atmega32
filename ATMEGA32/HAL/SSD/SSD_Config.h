@@ -106,7 +106,7 @@
 #define	SSD_u8DISP4_SEGG		DIO_u8PIN7
 
 /*******************************************************/
-/********** Configuration for Display Num5 **************/
+/********** Configuration for Display Num5 *************/
 /*******************************************************/
 
 /*Comment!: Display Type*/

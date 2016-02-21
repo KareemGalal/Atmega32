@@ -7,16 +7,16 @@
 /*******************************************************/  
   
 /*Comment!: Numbers*/ 
-#define  SSD_u8NUM0	0
-#define  SSD_u8NUM1	1
-#define  SSD_u8NUM2	2
-#define  SSD_u8NUM3	3
-#define  SSD_u8NUM4	4
-#define  SSD_u8NUM5	5
-#define  SSD_u8NUM6	6
-#define  SSD_u8NUM7	7
-#define  SSD_u8NUM8	8
-#define  SSD_u8NUM9	9
+#define SSD_u8NUM0	0
+#define SSD_u8NUM1	1
+#define SSD_u8NUM2	2
+#define SSD_u8NUM3	3
+#define SSD_u8NUM4	4
+#define SSD_u8NUM5	5
+#define SSD_u8NUM6	6
+#define SSD_u8NUM7	7
+#define SSD_u8NUM8	8
+#define SSD_u8NUM9	9
 
 /*Comment!: Displays Numbers*/ 
 #define	SSD_u8DISP1	0

@@ -55,6 +55,8 @@
 /*Comment!: Digital I/O Values*/
 #define DIO_u8HIGH		1
 #define DIO_u8LOW		0
+#define DIO_u8PORTHIGH	255
+#define DIO_u8PORTLOW	0
 
 /*Comment!: Digital I/O Direction*/
 #define DIO_u8INPUT		0
