@@ -86,7 +86,7 @@ extern u8 DIO_u8WritePortVal(u8 Copy_u8PortIdx, u8 Copy_u8PortVal) {
 	if ((Copy_u8PortIdx > DIO_u8PORT3)) {
 		Local_u8Status = u8ERROR;
 	} else {
-		(*DIO_u8DDRS[Copy_u8PortIdx]) = Copy_u8PortVal;
+		(*DIO_u8PORTS[Copy_u8PortIdx]) = Copy_u8PortVal;
 		Local_u8Status = u8OK;
 	}
 	return Local_u8Status;
