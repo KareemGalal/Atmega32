@@ -11,9 +11,23 @@
 /*******************************************************/
 /***************** Public Definitions ******************/
 /*******************************************************/
-/*Comment!: Tactile Switch States*/
-#define TSW_u8ONSTATE	1
-#define TSW_u8OFFSTATE	0
+
+/*Comment!: Displays Numbers*/
+#define	TSW_u8NUM1	0
+#define TSW_u8NUM2	1
+#define TSW_u8NUM3	2
+#define TSW_u8NUM4	3
+#define TSW_u8NUM5	4
+#define TSW_u8NUM6	5
+#define TSW_u8NUM7	6
+#define TSW_u8NUM8	7
+#define TSW_u8NUM9	8
+#define TSW_u8NUM10	9
+
+/*Comment!: Switch State*/
+/*Range!: DIO_u8LOW or DIO_u8HIGH*/
+#define	TSW_u8PRESSED	DIO_u8LOW
+#define	TSW_u8RELEASED	DIO_u8HIGH
 
 /*******************************************************/
 /*****************  Public Functions  ******************/

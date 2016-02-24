@@ -23,4 +23,7 @@ typedef  double					f64;
 #define u8OK			1
 #define u8ERROR			0
 
+#define TRUE				1
+#define	FALSE				0
+
 #endif /* _TYPES_H_ */

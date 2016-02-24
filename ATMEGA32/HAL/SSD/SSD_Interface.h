@@ -25,14 +25,6 @@
 #define SSD_u8DISP4	3
 #define SSD_u8DISP5	4
 #define SSD_u8DISP6	5
-
-/*Comment!: Display States*/ 
-#define SSD_u8ONSTATE	1
-#define SSD_u8OFFSTATE	0
-
-/*Comment!: Display Types*/ 
-#define SSD_u8COMANOD	1
-#define SSD_u8COMCATH	0
   
 /*******************************************************/  
 /*****************  Public Functions  ******************/  
