@@ -506,7 +506,6 @@ extern void SSD_voidInit(void) {
 	      DIO_u8WritePinVal(SSD_u8DISP5_SEGE, SSD_Digits_ComCath[SSD_u8DISP5_INITVAL].SEGE);
 	      DIO_u8WritePinVal(SSD_u8DISP5_SEGF, SSD_Digits_ComCath[SSD_u8DISP5_INITVAL].SEGF);
 	      DIO_u8WritePinVal(SSD_u8DISP5_SEGG, SSD_Digits_ComCath[SSD_u8DISP5_INITVAL].SEGG);
-	      Local_u8RetrunStatus = u8OK;
 	#elif (SSD_u8DISP5_TYPE==SSD_u8COMANOD)
 	      DIO_u8WritePinVal(SSD_u8DISP5_COM, SSD_u8DISP5_TYPE);
 	      DIO_u8WritePinVal(SSD_u8DISP5_SEGA, SSD_Digits_ComAnod[SSD_u8DISP5_INITVAL].SEGA);
@@ -528,8 +527,6 @@ extern void SSD_voidInit(void) {
 	      DIO_u8WritePinVal(SSD_u8DISP6_SEGE, SSD_Digits_ComCath[SSD_u8DISP6_INITVAL].SEGE);
 	      DIO_u8WritePinVal(SSD_u8DISP6_SEGF, SSD_Digits_ComCath[SSD_u8DISP6_INITVAL].SEGF);
 	      DIO_u8WritePinVal(SSD_u8DISP6_SEGG, SSD_Digits_ComCath[SSD_u8DISP6_INITVAL].SEGG);
-	      Local_u8RetrunStatus = u8OK;
-	      break;
 	#elif (SSD_u8DISP6_TYPE==SSD_u8COMANOD)
 	      DIO_u8WritePinVal(SSD_u8DISP6_COM, SSD_u8DISP6_TYPE);
 	      DIO_u8WritePinVal(SSD_u8DISP6_SEGA, SSD_Digits_ComAnod[SSD_u8DISP6_INITVAL].SEGA);

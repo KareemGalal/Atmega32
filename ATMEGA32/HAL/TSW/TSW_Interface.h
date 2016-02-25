@@ -23,6 +23,12 @@
 #define TSW_u8NUM8	7
 #define TSW_u8NUM9	8
 #define TSW_u8NUM10	9
+#define TSW_u8NUM11	10
+#define TSW_u8NUM12	11
+#define TSW_u8NUM13	12
+#define TSW_u8NUM14	13
+#define TSW_u8NUM15	14
+#define TSW_u8NUM16	15
 
 /*Comment!: Switch State*/
 /*Range!: DIO_u8LOW or DIO_u8HIGH*/

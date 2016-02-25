@@ -12,8 +12,8 @@
 #define	HC595_u8NUM_ZERO			0
 #define	HC595_u8NUM_ONE				1
 /*Comment!: Display States*/
-#define HC595_U8ONSTATE				1
-#define HC595_U8OFFSTATE			0
+#define HC595_u8ONSTATE				1
+#define HC595_u8OFFSTATE			0
 /*******************************************************/  
 /*****************  Private Functions  *****************/  
 /*******************************************************/  
