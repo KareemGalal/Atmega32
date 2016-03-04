@@ -45,6 +45,7 @@ static const u8 TSW_u8SwitchNumArr[TSW_ARRAY_SIZE] = {TSW_u8SWITCH1PIN, TSW_u8SW
 static const u8 TSW_u8SwitchNumArr[TSW_ARRAY_SIZE] = {TSW_u8SWITCH1PIN, TSW_u8SWITCH2PIN, TSW_u8SWITCH3PIN, TSW_u8SWITCH4PIN, TSW_u8SWITCH5PIN, TSW_u8SWITCH6PIN, TSW_u8SWITCH7PIN, TSW_u8SWITCH8PIN, TSW_u8SWITCH9PIN, TSW_u8SWITCH10PIN, TSW_u8SWITCH11PIN, TSW_u8SWITCH12PIN, TSW_u8SWITCH13PIN, TSW_u8SWITCH4PIN, TSW_u8SWITCH15PIN, TSW_u8SWITCH16PIN};
 #endif
 
+/*Comment!: check the switch state Pressed or Released*/
 extern u8 TSW_u8CheckSwitch(u8 Copy_u8SwIdx, u8* Copy_u8PtrVal) {
 	u8 Local_u8RetrunStatus;
 	if ((Copy_u8SwIdx > TSW_CONNECTED_NUM)) {
@@ -108,6 +109,7 @@ extern u8 TSW_u8CheckSwitch(u8 Copy_u8SwIdx, u8* Copy_u8PtrVal) {
 	return Local_u8RetrunStatus;
 }
 
+/*Comment!: Initialize the Tactile_Switch*/
 extern void TSW_voidInit(void) {
 //	u8 Copy_u8SwIdx;
 //	for (Copy_u8SwIdx = 0; Copy_u8SwIdx < TSW_ARRAY_SIZE; Copy_u8SwIdx++) {

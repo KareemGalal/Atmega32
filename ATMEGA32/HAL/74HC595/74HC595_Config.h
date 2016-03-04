@@ -8,12 +8,12 @@
 /*Comment!: Initial State*/
 /*Range!  : HC595_U8OFFSTATE or  HC595_U8ONSTATE*/
 #define	HC595_ID1_INITSTATE				HC595_u8ONSTATE
-/*Comment!: Serial Data Input pin location pin 14 on the 75HC595*/
+/*Comment!: Serial Data Input pin location (pin 14 on the 75HC595)*/
 /*Range!  : DIO_u8PIN0 : DIO_u8PIN31*/
-#define HC595_ID1_SER_DATA_PIN			DIO_u8PIN25
-/*Comment!: Shift Register ClockInpuT pin location pin 11 on the 75HC595*/
+#define HC595_ID1_SER_DATA_PIN			DIO_u8PIN24
+/*Comment!: Shift Register ClockInpuT pin location (pin 11 on the 75HC595)*/
 /*Range!  : DIO_u8PIN0 : DIO_u8PIN31*/
-#define HC595_ID1_SCK_PIN				DIO_u8PIN24
+#define HC595_ID1_SCK_PIN				DIO_u8PIN25
 /*Comment!: Storage Register ClockInput pin location (pin 12 on the 75HC595)*/
 /*Range!  : DIO_u8PIN0 : DIO_u8PIN31*/
 #define HC595_ID1_RCK_PIN				DIO_u8PIN26
@@ -24,7 +24,7 @@
 
 /*Comment!: Initial State*/
 /*Range!  : HC595_U8OFFSTATE or  HC595_U8ONSTATE*/
-#define	HC595_ID2_INITSTATE				HC595_u8ONSTATE
+#define	HC595_ID2_INITSTATE				HC595_U8OFFSTATE
 /*Comment!: Serial Data Input pin location pin 14 on the 75HC595*/
 /*Range!  : DIO_u8PIN0 : DIO_u8PIN31*/
 #define HC595_ID2_SER_DATA_PIN			DIO_u8PIN28

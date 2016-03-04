@@ -4,7 +4,8 @@
  *  Created on: Feb 1, 2016
  *      Author: KiMo
  */
-
+//this example of 4 seven segments displaying a counter
+//all of the 4 seven segments is connected on the same data bus for segA:G
 #include "Utilities\Types.h"
 #include "Utilities\Delay.h"
 #include "MCAL\DIO\DIO_Interface.h"
@@ -42,7 +43,7 @@ int main(void) {
 		SSD_u8TurnOn(SSD_u8DISP4);
 		voidDELAY_MS(5);
 		SSD_u8TurnOff(SSD_u8DISP4);
-		if (local_u8flag != 0) {
+		if (local_u8flag != 0) { // act as for loop just for give us some delay before we inc the counter
 			local_u8flag--;
 		} else {
 			local_u8flag = 50;

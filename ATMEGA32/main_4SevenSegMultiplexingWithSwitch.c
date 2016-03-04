@@ -5,9 +5,12 @@
  *      Author: KiMo
  */
 
+// 4 seven segments connected the same data bus segA:G act as counter
+// on each click from the switch the counter will increment
+
 #include "Utilities\Types.h"
-#include "MCAL\DIO\DIO_Interface.h"
 #include "Utilities\Delay.h"
+#include "MCAL\DIO\DIO_Interface.h"
 #include "HAL\SSD\SSD_Interface.h"
 
 #define SWITCHPIN			DIO_u8PIN15
@@ -49,8 +52,10 @@ int main(void) {
 		SSD_u8TurnOn(SSD_u8DISP4);
 		voidDELAY_MS(5);
 		SSD_u8TurnOff(SSD_u8DISP4);
+		//Reading the switch state
 		DIO_u8ReadPinVal(SWITCHPIN, &local_u8SwitchValue);
-		if (!local_u8SwitchValue) {
+		//the following code is for the Debouncing
+		if (!local_u8SwitchValue) { //pressed
 			Pressed_Confidence_Level++; //Increase Pressed Confidence
 			Released_Confidence_Level = 0; //Reset released button confidence since there is a button press
 			if (Pressed_Confidence_Level > CONFIDENCE_LEVEL) { //Indicator of good button press

@@ -4,7 +4,7 @@
  *  Created on: Feb 1, 2016
  *      Author: KiMo
  */
-
+//This Example of using 2 seven segments displaying a counter
 #include "Utilities\Types.h"
 #include "Utilities\Delay.h"
 #include "MCAL\DIO\DIO_Interface.h"

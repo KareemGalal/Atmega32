@@ -32,7 +32,7 @@
 
 /*Comment!: Switch State*/
 /*Range!: DIO_u8LOW or DIO_u8HIGH*/
-#define	TSW_u8PRESSED	DIO_u8LOW
+#define	TSW_u8PRESSED	DIO_u8LOW//Low if active pull up resistor & High for pull down resistor
 #define	TSW_u8RELEASED	DIO_u8HIGH
 
 /*******************************************************/

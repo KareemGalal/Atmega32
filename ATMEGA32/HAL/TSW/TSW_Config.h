@@ -18,7 +18,7 @@
 #define TSW_CONNECTED_NUM	 TSW_u8NUM1
 
 /*Comment!: Switches Initial State*/
-#define TSW_u8PRESSED_RELEASED_LEVEL	100
+#define TSW_u8PRESSED_RELEASED_LEVEL	20
 
 /*Comment!: Switches Initial State should to be in arrange order*/
 /*Range!  : TSW_u8OFFSTATE or  TSW_u8ONSTATE*/
@@ -41,7 +41,7 @@
 
 /*Comment!: Switch Pin Configuration*/
 /*Range!  : DIO_u8PIN0 : DIO_u8PIN31*/
-#define TSW_u8SWITCH1PIN	DIO_u8PIN15
+#define TSW_u8SWITCH1PIN	DIO_u8PIN31
 #define TSW_u8SWITCH2PIN	DIO_u8PIN0
 #define TSW_u8SWITCH3PIN	DIO_u8PIN0
 #define TSW_u8SWITCH4PIN	DIO_u8PIN0
